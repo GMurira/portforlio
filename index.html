@@ -1,11 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Geoffrey Nguyai Murira | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #1f1f1f;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    nav {
+      margin-top: 0.5rem;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #1f1f1f;
+      margin-bottom: 1rem;
+    }
+
+    .project, .blog-post {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    ul.skills-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    ul.skills-list li {
+      background: #e3e3e3;
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+    }
+
+    a.button {
+      display: inline-block;
+      background: #1f1f1f;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 0.5rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input, textarea {
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input[type="submit"] {
+      background: #1f1f1f;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #eee;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
-    <h1>Working on this website, Working</h1>
+
+  <header>
+    <h1>Geoffrey Nguyai Murira</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+      <a href="#blog">Blog</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m Geoffrey Nguyai Murira, a software developer specialized in native Android development. 
+      I’m currently expanding my skill set by learning Java and Golang, and I also have hands-on experience in DevOps practices. 
+      I’m passionate about building high-performance mobile apps and developing robust, scalable backend systems.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>Good Foot Properties</h3>
+      <p>A real estate web platform with Ktor backend, PostgreSQL database, and an HTML/JavaScript frontend. Features dynamic land listings, admin dashboard, and contact management.</p>
+      <a class="button" href="#" target="_blank">View Project</a>
+    </div>
+
+    <div class="project">
+      <h3>Personal Expense Tracker (Android)</h3>
+      <p>An offline-first Android app for managing personal expenses with SQLite, custom charts, and Material Design.</p>
+      <a class="button" href="#" target="_blank">GitHub</a>
+    </div>
+
+    <div class="project">
+      <h3>CI/CD Pipeline with Jenkins & Slack</h3>
+      <p>Automated CI/CD setup using Jenkins, Docker, and Slack notifications. Integrated with Node.js backend for a production app.</p>
+      <a class="button" href="#" target="_blank">Documentation</a>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>Android (Java, Kotlin)</li>
+      <li>Java</li>
+      <li>Golang</li>
+      <li>DevOps</li>
+      <li>Docker</li>
+      <li>CI/CD (Jenkins, GitHub Actions)</li>
+      <li>Git</li>
+      <li>Linux</li>
+      <li>Ktor</li>
+      <li>PostgreSQL</li>
+    </ul>
+  </section>
+
+  <section id="resume">
+    <h2>Resume</h2>
+    <p>Download my latest resume below:</p>
+    <a class="button" href="resume.pdf" download>Download Resume (PDF)</a>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <form action="mailto:geoffrey@example.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <input type="submit" value="Send Message" />
+    </form>
+  </section>
+
+  <section id="blog">
+    <h2>Blog</h2>
+
+    <div class="blog-post">
+      <h3>Learning Golang: My First REST API</h3>
+      <p>In this post, I share how I built my first backend service using Go and the Gin framework.</p>
+      <a class="button" href="#">Read More</a>
+    </div>
+
+    <div class="blog-post">
+      <h3>Optimizing Android Apps with Jetpack Libraries</h3>
+      <p>A walkthrough of how I used Jetpack Navigation and ViewModel to enhance app performance and structure.</p>
+      <a class="button" href="#">Read More</a>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>© 2025 Geoffrey Nguyai Murira | All Rights Reserved</p>
+  </footer>
+
 </body>
 </html>
