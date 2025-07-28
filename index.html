@@ -10,13 +10,13 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f9f9f9;
-      color: #333;
+      background: #000000;
+      color: #00ff00;
     }
 
     header {
-      background: #1f1f1f;
-      color: white;
+      background: #111;
+      color: #00ff00;
       padding: 1rem 0;
       text-align: center;
     }
@@ -26,7 +26,7 @@
     }
 
     nav a {
-      color: white;
+      color: #00ff00;
       margin: 0 1rem;
       text-decoration: none;
       font-weight: bold;
@@ -38,17 +38,17 @@
       margin: auto;
     }
 
-    h2 {
-      color: #1f1f1f;
+    h2, h3 {
+      color: #00ff00;
       margin-bottom: 1rem;
     }
 
     .project, .blog-post {
-      background: white;
+      background: #111;
       padding: 1rem;
       border-radius: 8px;
       margin-bottom: 1.5rem;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0,255,0,0.2);
     }
 
     ul.skills-list {
@@ -59,20 +59,26 @@
     }
 
     ul.skills-list li {
-      background: #e3e3e3;
+      background: #003300;
       margin: 0.5rem;
       padding: 0.5rem 1rem;
       border-radius: 20px;
+      color: #00ff00;
     }
 
     a.button {
       display: inline-block;
-      background: #1f1f1f;
-      color: white;
+      background: #003300;
+      color: #00ff00;
       padding: 0.5rem 1rem;
       border-radius: 5px;
       text-decoration: none;
       margin-top: 0.5rem;
+      transition: background 0.3s ease;
+    }
+
+    a.button:hover {
+      background: #006600;
     }
 
     form {
@@ -83,22 +89,33 @@
     input, textarea {
       padding: 0.5rem;
       margin-bottom: 1rem;
-      border: 1px solid #ccc;
+      border: 1px solid #00ff00;
       border-radius: 4px;
+      background: #000;
+      color: #00ff00;
     }
 
     input[type="submit"] {
-      background: #1f1f1f;
-      color: white;
+      background: #003300;
+      color: #00ff00;
       border: none;
       cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background: #006600;
     }
 
     footer {
       text-align: center;
       padding: 1rem;
-      background: #eee;
+      background: #111;
       margin-top: 2rem;
+      color: #00ff00;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
   </style>
 </head>
