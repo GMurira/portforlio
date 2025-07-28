@@ -4,59 +4,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Geoffrey Nguyai Murira | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body, html {
+    /* Base styling */
+    body {
+      font-family: 'Share Tech Mono', monospace;
       margin: 0;
       padding: 0;
-      font-family: 'Orbitron', monospace;
-      background: #000;
-      color: #00ff00;
-      overflow-x: hidden;
-    }
-
-    canvas#matrix-canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      width: 100%;
-      height: 100%;
+      background-color: black;
+      color: #00FF00;
+      scroll-behavior: smooth;
     }
 
     header {
-      background-image: url('https://i.imgur.com/2qN4L6L.png');
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/MATRIX_effect.svg/2560px-MATRIX_effect.svg.png') repeat;
       background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-color: #000;
-      background-blend-mode: overlay;
+      color: #00FF00;
       padding: 2rem 0;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
 
-    .typing-name {
-      font-size: 2rem;
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
       white-space: nowrap;
-      overflow: hidden;
-      border-right: 3px solid #00ff00;
+      border-right: 2px solid #00FF00;
       width: 0;
-      margin: auto;
-      animation: typing 4s steps(30, end) forwards, blink 0.75s step-end infinite;
+      overflow: hidden;
+      animation: typing 3s steps(30, end) forwards, blink 0.8s step-end infinite;
     }
 
     @keyframes typing {
-      from { width: 0 }
-      to { width: 20ch }
+      from { width: 0; }
+      to { width: 100%; }
     }
 
     @keyframes blink {
-      from, to { border-color: transparent }
-      50% { border-color: #00ff00; }
+      50% { border-color: transparent; }
     }
 
     nav {
@@ -64,29 +50,41 @@
     }
 
     nav a {
-      color: #00ff00;
+      color: #00FF00;
       margin: 0 1rem;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: white;
     }
 
     section {
-      padding: 2rem;
+      padding: 3rem 2rem;
       max-width: 1000px;
       margin: auto;
+      transition: transform 0.4s ease-in-out;
     }
 
-    h2, h3 {
-      color: #00ff00;
+    section:hover {
+      transform: scale(1.01);
+    }
+
+    h2 {
+      color: #00FF00;
       margin-bottom: 1rem;
+      border-bottom: 1px solid #00FF00;
+      padding-bottom: 0.5rem;
     }
 
     .project, .blog-post {
-      background: #111;
+      background: rgba(0, 255, 0, 0.05);
       padding: 1rem;
       border-radius: 8px;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 0 10px rgba(0,255,0,0.2);
+      margin-bottom: 2rem;
+      border: 1px solid #00FF00;
     }
 
     ul.skills-list {
@@ -97,17 +95,18 @@
     }
 
     ul.skills-list li {
-      background: #003300;
+      background: rgba(0, 255, 0, 0.1);
       margin: 0.5rem;
       padding: 0.5rem 1rem;
       border-radius: 20px;
-      color: #00ff00;
+      border: 1px solid #00FF00;
     }
 
     a.button {
       display: inline-block;
-      background: #003300;
-      color: #00ff00;
+      background: transparent;
+      border: 1px solid #00FF00;
+      color: #00FF00;
       padding: 0.5rem 1rem;
       border-radius: 5px;
       text-decoration: none;
@@ -116,7 +115,8 @@
     }
 
     a.button:hover {
-      background: #006600;
+      background: #00FF00;
+      color: black;
     }
 
     form {
@@ -125,44 +125,37 @@
     }
 
     input, textarea {
+      background: black;
+      color: #00FF00;
+      border: 1px solid #00FF00;
       padding: 0.5rem;
       margin-bottom: 1rem;
-      border: 1px solid #00ff00;
       border-radius: 4px;
-      background: #000;
-      color: #00ff00;
     }
 
     input[type="submit"] {
-      background: #003300;
-      color: #00ff00;
-      border: none;
+      background: #00FF00;
+      color: black;
       cursor: pointer;
+      transition: 0.3s ease;
     }
 
     input[type="submit"]:hover {
-      background: #006600;
+      background: white;
     }
 
     footer {
       text-align: center;
       padding: 1rem;
       background: #111;
-      margin-top: 2rem;
-      color: #00ff00;
-    }
-
-    html {
-      scroll-behavior: smooth;
+      border-top: 1px solid #00FF00;
     }
   </style>
 </head>
 <body>
 
-  <canvas id="matrix-canvas"></canvas>
-
   <header>
-    <div class="typing-name">Geoffrey Nguyai Murira</div>
+    <h1>Geoffrey Nguyai Murira</h1>
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
@@ -255,44 +248,6 @@
   <footer>
     <p>© 2025 Geoffrey Nguyai Murira | All Rights Reserved</p>
   </footer>
-
-  <!-- Matrix Rain Script -->
-  <script>
-    const canvas = document.getElementById("matrix-canvas");
-    const ctx = canvas.getContext("2d");
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const letters = "01";
-    const fontSize = 14;
-    const columns = canvas.width / fontSize;
-    const drops = Array.from({ length: columns }, () => 1);
-
-    function draw() {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "#0F0";
-      ctx.font = fontSize + "px monospace";
-
-      for (let i = 0; i < drops.length; i++) {
-        const text = letters.charAt(Math.floor(Math.random() * letters.length));
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
-        }
-        drops[i]++;
-      }
-    }
-
-    setInterval(draw, 33);
-
-    window.addEventListener("resize", () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    });
-  </script>
 
 </body>
 </html>
